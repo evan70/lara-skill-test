@@ -1,33 +1,30 @@
-# Тест на знание основ laravel
+# Test základov Laravelu
 
-Репозиторий служит целью проверки знаний основ фреймворка laravel, в рамках тем указанных в roadmap здесь:
-[CutCode Junior Roadmap](https://cutcode.dev/roadmap)
+Repozitár slúži na overenie znalostí základov Laravel 
 
-[Видео инструкции](https://www.youtube.com/watch?v=bYDfOLhqKaE)
+Cieľom vytvorenia takéhoto testovania bolo pokryť základné časti Laravelu a naučiť sa prakticky pokrývať testami celý projekt.
 
-Цель создания такого тестирования было охватить базовые разделы laravel и научиться на практике покрывать тестами проект на laravel.
-
-# Оглавление по темам
-1. [Миграции](#task-migrations)
-2. [Маршрутизация](#task-route)
-3. [Blade template](#task-blade)
+# Obsah podľa tém
+1. [Migrácie](#task-migrations)
+2. [Routovanie](#task-route)
+3. [Blade šablóny](#task-blade)
 4. [Eloquent model](#task-model)
-5. [Валидация](#task-validation)
-6. [Аутентификация](#task-auth)
+5. [Validácia](#task-validation)
+6. [Autentifikácia](#task-auth)
 
-Для начала необходимо развернуть проект на котором будут выполняться тесты.
+Pre začiatok je potrebné nasadiť projekt, na ktorom budú vykonávané testy.
 
-# Установка
+# Inštalácia
 - `composer install`
 - `php artisan key:generate`
-- .env с реквизитами mysql базы данных
-- КРАЙНЕ ВАЖНО ЧТОБЫ БАЗА ДАННЫХ НАЗЫВАЛАСЬ laravel_skill_test
+- .env s údajmi o databáze mysql
+- VEĽMI DÔLEŽITÉ JE, ABY NÁZOV DATABÁZY BOL laravel_skill_test
 
-# Потребуется
+# Požiadavky
 - php >= 7.3
 - mysql
 
-# Проверка
+# Overenie
 - `php artisan test --filter MigrationsTest`
 - `php artisan test --filter RouteTest`
 - `php artisan test --filter BladeTest`
@@ -36,59 +33,70 @@
 - `php artisan test --filter AuthTest`
 - `php artisan test`
 
+# Inštrukcie
+Úlohy môžete hľadať pomocou filtra TODO v IDE (ignorujte adresár /storage) alebo podľa zoznamu úloh.
 
-# Инструкции
-Искать задачи можно по фильтру TODO в IDE (игнорируя директорию /storage), либо по списку заданий
+# Potvrdenie vykonania testu
+PR do vetvy master (automaticky spustí test overenia)
 
-# Подтверждение выполнения теста
-PR в ветку master (автоматически запустит тест проверки)
+# Úlohy
 
-# Задания
-
-## 1) Миграции <a name="task-migrations"></a>
-Все задания находятся здесь `database/migrations/tasks`
-- Тесты `tests/Feature/MigrationsTest.php`
-- Запуск `php artisan test --filter MigrationsTest`
-
----
-#### Задание 1: Новая таблица
-Создать в базе данных таблицу categories с 2 полями id и title (не забыть про timestamps)
+## 1) Migrácie <a name="task-migrations"></a>
+Všetky úlohy nájdete tu `database/migrations/tasks`
+- Testy `tests/Feature/MigrationsTest.php`
+- Spustenie `php artisan test --filter MigrationsTest`
 
 ---
-#### Задание 2: Nullable
-Для title указать что значение по умолчанию NULL
+#### Úloha 1: Nová tabuľka
+Vytvorte v databáze tabuľku categories s 2 stĺpcami id a title (nezabudnite na timestamps)
 
 ---
-#### Задание 3: Значение по умолчанию
-Для active указать что значение по умолчанию TRUE
+#### Úloha 2: Nullable
+Pre title nastavte predvolenú hodnotu NULL
 
 ---
-#### Задание 4: Soft Deleting
-Добавить функционал soft delete
+#### Úloha 3: Hodnota predvolená
+Pre active nastavte hodnotu predvolene TRUE
 
 ---
-#### Задание 5: Timestamps
-Добавить поля с timestamps (created_at, updated_at) через 1 метод
+#### Úloha 4: Mäkké mazanie
+Pridajte funkciu mäkkého mazania (soft delete)
 
 ---
-#### Задание 6: Новое поле с указанием порядка
-Добавить поле description типа text (DEFAULT NULL) ПОСЛЕ поля title
+#### Úloha 5: Časové pečiatky
+Pridajte stĺpce s časovými pečiatkami (created_at, updated_at) pomocou jednej metódy
 
 ---
-#### Задание 7: Проверка наличия поля
-Сделать провеку на наличие поля active и в случаи успеха добавить поле main (boolean default false)
+#### Úloha 6: Nové pole s určením poradia
+Pridajte pole description typu text (DEFAULT NULL) POČAS (AFTER) poľa title
 
 ---
-#### Задание 8: Переименовать поле
-Переименовать поле title в name
+#### Úloha 7: Kontrola existencie poľa
+Skontrolujte existenciu poľa active a v prípade úspechu pridajte pole main (boolean default false)
 
 ---
-#### Задание 9: Переименовать таблицу
-Переименовать таблицу posts в articles
+#### Úloha 8: Preznačenie poľa
+Preznačte pole title na name
 
 ---
-#### Задание 10: belongsToMany
-Добавить таблицу для связи articles и categories (belongsToMany) c foreign ключами
+#### Úloha 9: Preznačenie tabuľky
+Preznačte tabuľku posts na articles
+
+---
+#### Úloha 10: belongsToMany
+Pridajte tabuľku pre vzťahy articles a categories (belongsToMany) s cudzími kľúčmi
+
+---
+## 2) Routovanie (Route) <a name="task-route"></a>
+Všetky úlohy nájdete tu `routes/web.php` a `routes/api.php`
+- Testy `tests/Feature/RouteTest.php`
+- Spustenie `php artisan test --filter RouteTest`
+
+...
+
+
+
+
 
 ---
 ## 2) Маршрутизация (Route) <a name="task-route"></a>
