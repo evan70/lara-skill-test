@@ -2,7 +2,7 @@
 
 Repozitár slúži na overenie znalostí základov Laravel 
 
-Cieľom vytvorenia takéhoto testovania bolo pokryť základné časti Laravelu a naučiť sa prakticky pokrývať testami celý projekt.
+Cieľom vytvorenia repozitára bolo pokryť základné časti Laravelu a naučiť sa prakticky ho pokrývať testami.
 
 # Obsah podľa tém
 1. [Migrácie](#task-migrations)
@@ -68,19 +68,19 @@ Pridajte stĺpce s časovými pečiatkami (created_at, updated_at) pomocou jedne
 
 ---
 #### Úloha 6: Nové pole s určením poradia
-Pridajte pole description typu text (DEFAULT NULL) POČAS (AFTER) poľa title
+Pridajte pole description typu text (DEFAULT NULL) aź po (AFTER) poli title
 
 ---
 #### Úloha 7: Kontrola existencie poľa
 Skontrolujte existenciu poľa active a v prípade úspechu pridajte pole main (boolean default false)
 
 ---
-#### Úloha 8: Preznačenie poľa
-Preznačte pole title na name
+#### Úloha 8: Premenovanie poľa
+Premenujte pole title na name
 
 ---
-#### Úloha 9: Preznačenie tabuľky
-Preznačte tabuľku posts na articles
+#### Úloha 9: Premenovanie tabuľky
+Premenujte tabuľku posts na articles
 
 ---
 #### Úloha 10: belongsToMany
@@ -91,67 +91,51 @@ Pridajte tabuľku pre vzťahy articles a categories (belongsToMany) s cudzími k
 Všetky úlohy nájdete tu `routes/web.php` a `routes/api.php`
 - Testy `tests/Feature/RouteTest.php`
 - Spustenie `php artisan test --filter RouteTest`
+---
+
+#### Úloha 1: Zobraziť view
+Pre GET URL /hello zobraziť view - /resources/views/hello.blade (bez controllera)
+
+---
+#### Úloha 2: Controller
+Pre GET URL / odkázať na IndexController, metóda index
+
+---
+#### Úloha 3: Zobraziť view s názvom routy
+Pre GET URL /page/contact zobraziť view - /resources/views/pages/contact.blade s názvom routy - contact
+---
+#### Úloha 4: Parametre
+Pre GET URL /users/[id] odkázať sa na UserController -> metóda show bez Route Model Binding. Len parameter id
+---
+#### Úloha 5: Model Binding
+Pre GET URL /users/bind/[user] odkázať sa na UserController -> metóda showBind, ale v tomto prípade použite Route Model Binding. Parameter user
+
+---
+#### Úloha 6: Presmerovanie
+Vykonať presmerovanie z URL /bad na URL /good
+---
+
+#### Úloha 7: Resource kontrolér
+Pridajte route pre resource kontrolér - UserCrudController s URL - /users_crud
+
+---
+#### Úloha 8: Skupina
+Zorganizujte skupinu routes (Route::group()), ktoré sú zoskupené pod prefixom - dashboard
+
+---
+#### Úloha 9: Podskupina
+Pridať route GET /admin -> Admin/IndexController -> index
+
+---
+#### Úloha 10: Podskupina
+Pridať route POST /admin/post -> Admin/IndexController -> post
+
+---
+#### Úloha 11: Middleware
+Zorganizovať skupinu routes (Route::group()), ktoré sú zoskupené pod prefixom - security a middleware auth
 
 ...
 
-
-
-
-
----
-## 2) Маршрутизация (Route) <a name="task-route"></a>
-Все задания находятся здесь `routes/web.php` и `routes/api.php`
-- Тесты `tests/Feature/RouteTest.php`
-- Запуск `php artisan test --filter RouteTest`
-
----
-#### Задание 1: View
-По GET урлу /hello отобразить view - /resources/views/hello.blade (без контроллера)
-
----
-#### Задание 2: Controller
-По GET урлу / обратиться к IndexController, метод index
-
----
-#### Задание 3: View с наименованием роута
-По GET урлу /page/contact отобразить view - /resources/views/pages/contact.blade
-с наименованием роута - contact
-
----
-#### Задание 4: Параметры
-По GET урлу /users/[id] обратиться к UserController -> метод show
-без Route Model Binding. Только параметр id
-
----
-#### Задание 5: Model Binding
-По GET урлу /users/bind/[user] обратиться к UserController -> метод showBind
-но в данном случае используем Route Model Binding. Параметр user
-
----
-#### Задание 6: Редирект
-Выполнить редирект с урла /bad на урл /good
-
----
-#### Задание 7: Resource controller
-Добавить роут на ресурс контроллер - UserCrudController с урлом - /users_crud
-
----
-#### Задание 8: Группировка
-Организовать группу роутов (Route::group()) объединенных префиксом - dashboard
-
----
-#### Задание 9: Группировка подзадачи
-Добавить роут GET /admin -> Admin/IndexController -> index
-
----
-#### Задание 10: Группировка подзадачи
-Добавить роут POST /admin/post -> Admin/IndexController -> post
-
----
-#### Задание 11: Middleware
-Организовать группу роутов (Route::group()) объединенных префиксом - security и мидлваром auth
-
----
 #### Задание 12: Middleware подзадачи
 Добавить роут GET /admin/auth -> Admin/IndexController -> auth
 
